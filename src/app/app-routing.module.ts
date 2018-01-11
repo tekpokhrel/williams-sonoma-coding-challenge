@@ -1,23 +1,23 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { HttpClientModule} from '@angular/common/http';
+import {NgModule} from '@angular/core';
+import {HomeComponent} from './home/home.component';
+import {RouterModule, Routes} from '@angular/router';
+import {DetailsComponent} from './details/details.component';
 
-
-import { AppComponent } from './app.component';
-import {ProductService} from './services/product.service';
-import { HomeComponent } from './home/home.component';
-
+const appRoutes: Routes = [
+  {
+    path: '',
+    component: HomeComponent
+  },
+  {
+    path: 'details',
+    component: DetailsComponent
+  }
+  ];
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent
-  ],
   imports: [
-    BrowserModule,
-    HttpClientModule
+    RouterModule.forRoot(appRoutes)
   ],
-  providers: [ProductService],
-  bootstrap: [AppComponent]
+  exports: [RouterModule]
 })
-export class AppModule { }
+export class AppRoutingModule { }

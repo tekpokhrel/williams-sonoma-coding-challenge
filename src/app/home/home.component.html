@@ -1,0 +1,15 @@
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <hr>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-4" *ngFor="let product of products">
+        <p class="title">{{ product.name }}</p>
+        <img [src]="product.hero.href" alt="hero" class="img-responsive" (click)="viewDetails(product)">
+        <span class="price">Regular price: {{ product.priceRange.regular.high | currency }}</span>
+      </div>
+    </div>
+  </div>
+</div>
