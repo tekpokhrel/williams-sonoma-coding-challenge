@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ProductService} from '../services/product.service';
 import {APIResponse, Product} from '../models/dtos';
-import {Router} from "@angular/router";
-
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-home',
